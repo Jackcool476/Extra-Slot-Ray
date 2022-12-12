@@ -43,6 +43,7 @@
 #function PlayerObject_StartPeeloutS2
 #function PlayerObject_StartPeeloutCD
 #function PlayerObject_StartTailsFlight
+#function PlayerObject_StartRayGlide
 #function PlayerObject_HandleGround
 #function PlayerObject_HandleAir
 #function PlayerObject_HandleRolling
@@ -862,6 +863,11 @@ function PlayerObject_StartTailsFlight
 			endif
 		endif
 	endif
+endfunction
+
+
+function PlayerObject_StartRayGlide
+	
 endfunction
 
 
@@ -2414,7 +2420,7 @@ sub ObjectStartup
 				Player.JumpCap=-262144
 				Player.RollingDeceleration=8192
 				Player.CameraOffset=-1
-				Player.FlightFunction=PlayerObject_Blank
+				Player.FlightFunction=PlayerObject_StartRayGlide
 				Player.PeeloutFunction=PlayerObject_StartJump
 				if Options.OriginalControls==0
 					Player.SpindashFunction=PlayerObject_StartSpindashS2
